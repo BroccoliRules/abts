@@ -1,0 +1,73 @@
+{% extends "tethys_apps/app_base.html" %}
+
+{% load static %}
+
+{% block title %}{{ tethys_app.name }}{% endblock %}
+
+{% block app_icon %}
+  {# The path you provided in your app.py is accessible through the tethys_app.icon context variable #}
+  <img src="{% if 'http' in tethys_app.icon %}{{ tethys_app.icon }}{% else %}{% static tethys_app.icon %}{% endif %}" />
+{% endblock %}
+
+{# The name you provided in your app.py is accessible through the tethys_app.name context variable #}
+{% block app_title %}{{ tethys_app.name }}{% endblock %}
+
+{% block app_navigation_items %}
+
+{% url 'lovers_abts:home' as home_url %}
+{% url 'lovers_abts:proposal' as proposal_url %}
+
+<li class="{% if request.path == home_url %}active{% endif %}"><a href="{{ home_url }}">Home Page</a></li>
+<li class="{% if request.path == proposal_url %}active{% endif %}"><a href="{{ proposal_url }}">Proposal Page</a></li>
+
+
+
+{% endblock %}
+
+{% block app_content %}
+<h1> APP Background "IDENTIFYING ZONES FOR FOREST USE" </h1>
+
+<h3>There are two reason to create this APP. The two arguments to consider in the develop of this APP, the slope, the rivers and the Natural Areas.   </h3>
+
+<p> - In 2017, there was a natural disaster in the city of Mocoa, in the department of Putumayo (Colombia),
+    one of the reasons for this tragedy was that during the day a locally intense precipitation in the high and eroded zones generated a and a
+    landslide that triggered an unexpected flooding killing at least 254 people, injuring 332, and leaving 70 others missing (Podlaha et., al, 2017).
+    Likewise, there are other vulnerable areas in the country that could suffer this kind of hazards. That is one of the purposes of our APP, generated susceptible
+    zones to reforest based on the slope to avoid eroded zones. Other interesting purpose to develop this app
+    is to identify the natural zones to avoid build constructions.   </p>
+
+<div id = "image-content">
+
+     <img src="{% static 'lovers_abts/images/mocoa.jpg' %}" alt="Trulli" width="500" height="400">
+</div>
+
+
+</div>
+
+<h2> - "The district order to lay down a luxurious illegal house in the Eastern Hills of Bogota" (SEMANA Magazine) .</h2>
+
+<div id = "image-content">
+
+      <img src="{% static 'lovers_abts/images/rosales.jpg' %}" alt="Trulli" width="500" height="400">
+</div>
+
+
+
+<p> -  It is a house of almost 7,000 square meters that was within a forest reserve area.
+    The CAR (Acronym name for regional autonomous corporation) fined the owners with 476 million pesos (150.000 dollars).
+    This APP allows to know where are the prohibited places to build.</p>
+
+{% endblock %}
+
+{% block app_actions %}
+{% endblock %}
+
+{% block content_dependent_styles %}
+  {{ block.super }}
+  <link href="{% static 'lovers_abts/css/main.css' %}" rel="stylesheet"/>
+{% endblock %}
+
+{% block scripts %}
+  {{ block.super }}
+  <script src="{% static 'lovers_abts/js/main.js' %}" type="text/javascript"></script>
+{% endblock %}
