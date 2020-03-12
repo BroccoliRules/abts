@@ -3,6 +3,16 @@ from tethys_sdk.permissions import login_required
 from tethys_sdk.gizmos import Button
 
 @login_required()
+def proposal(request):
+    """
+    Controller for the page.
+    """
+    context = {}
+    return render(request, 'lovers_abts/proposal.html', context)
+
+
+
+@login_required()
 def home(request):
     """
     Controller for the app home page.
