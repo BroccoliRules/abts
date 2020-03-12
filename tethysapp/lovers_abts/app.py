@@ -8,11 +8,11 @@ class LoversAbts(TethysAppBase):
 
     name = 'Lovers Abts'
     index = 'lovers_abts:home'
-    icon = 'lovers_abts/images/icon.gif'
+    icon = 'lovers_abts/images/landslide.png'
     package = 'lovers_abts'
     root_url = 'lovers-abts'
     color = '#d35400'
-    description = ''
+    description = 'This app calculates where trees need to be planted in Colombia to have and maintain slope stability.'
     tags = ''
     enable_feedback = False
     feedback_emails = []
@@ -29,13 +29,6 @@ class LoversAbts(TethysAppBase):
                 url='lovers-abts',
                 controller='lovers_abts.controllers.home'
             ),
-            
-            
-            UrlMap(
-                 name='proposal',
-                 url='lovers-abts/proposal',
-                 controller='lovers_abts.controllers.proposal'
-                   ),
         )
 
         return url_maps
