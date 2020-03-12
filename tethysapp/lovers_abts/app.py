@@ -29,6 +29,11 @@ class LoversAbts(TethysAppBase):
                 url='lovers-abts',
                 controller='lovers_abts.controllers.home'
             ),
+            UrlMap(
+                name='proposal',
+                url='lovers-abts/proposal',
+                controller='lovers_abts.controllers.proposal'
+            ),
         )
 
         return url_maps
