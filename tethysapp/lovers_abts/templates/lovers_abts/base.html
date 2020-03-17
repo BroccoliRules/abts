@@ -15,11 +15,12 @@
 {% block app_navigation_items %}
 
 {% url 'lovers_abts:home' as home_url %}
+{% url 'lovers_abts:background' as background_url %}
 {% url 'lovers_abts:proposal' as proposal_url %}
 
 <li class="{% if request.path == home_url %}active{% endif %}"><a href="{{ home_url }}">Home Page</a></li>
+<li class="{% if request.path == background_url %}active{% endif %}"><a href="{{ background_url }}">Background Page</a></li>
 <li class="{% if request.path == proposal_url %}active{% endif %}"><a href="{{ proposal_url }}">Proposal Page</a></li>
-
 
 
 {% endblock %}
