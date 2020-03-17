@@ -2,6 +2,16 @@ from django.shortcuts import render
 from tethys_sdk.permissions import login_required
 from tethys_sdk.gizmos import Button
 
+
+
+@login_required()
+def Directory(request):
+    """
+    Controller for the Directory page.
+    """
+    context = {}
+    return render(request, 'lovers_abts/Directory.html', context)
+
 @login_required()
 def background(request):
     """
@@ -9,6 +19,7 @@ def background(request):
     """
     context = {}
     return render(request, 'lovers_abts/background.html', context)
+
 
 @login_required()
 def proposal(request):
