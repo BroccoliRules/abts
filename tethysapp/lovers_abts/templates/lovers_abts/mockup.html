@@ -1,0 +1,73 @@
+{% extends "tethys_apps/app_base.html" %}
+
+{% load static %}
+
+{% block title %}{{ tethys_app.name }}{% endblock %}
+
+{% block app_icon %}
+  {# The path you provided in your app.py is accessible through the tethys_app.icon context variable #}
+  <img src="{% if 'http' in tethys_app.icon %}{{ tethys_app.icon }}{% else %}{% static tethys_app.icon %}{% endif %}" />
+{% endblock %}
+
+{# The name you provided in your app.py is accessible through the tethys_app.name context variable #}
+{% block app_title %}{{ tethys_app.name }}{% endblock %}
+
+{% block app_navigation_items %}
+
+{% url 'lovers_abts:home' as home_url %}
+{% url 'lovers_abts:proposal' as proposal_url %}
+
+<li class="{% if request.path == home_url %}active{% endif %}"><a href="{{ home_url }}">Home Page</a></li>
+<li class="{% if request.path == proposal_url %}active{% endif %}"><a href="{{ proposal_url }}">Proposal Page</a></li>
+
+
+
+{% endblock %}
+
+{% block app_content %}
+
+<h1>Abide by the Landslide</h1>
+<h2>About the App</h2>
+
+<p>With the help of this app, you will be able to select a county in Colombia, draw the zone you'd like to analyze within the county, and then run the app to show what percentage of land needs to be forested and where it needs to be forested.</p>
+
+<div id = "image-content">
+      <CENTER><img src="{% static 'lovers_abts/images/Map.png' %}" alt="Trulli" width="500" height="400"> </CENTER>
+</div>
+
+<p>The map shows the country of Colombia with the Counties and Rivers.</p>
+
+<p>The first thing we need to select is the county we are going to analyze.</p>
+
+<div id = "image-content">
+     <CENTER><img src="{% static 'lovers_abts/images/County.png' %}" alt="Trulli" width="500" height="400"> </CENTER>
+</div>
+
+<p>First select the county and then you will draw a box around the specific area in question in that county.</p>
+
+<div id = "image-content">
+      <CENTER><img src="{% static 'lovers_abts/images/Shape.png' %}" alt="Trulli" width="500" height="400"> </CENTER>
+</div>
+
+<p>After you've selected the zone, the app will output something similar to below showing which type of forest needs to be planted in each area.</p>
+
+<div id = "image-content">
+      <CENTER><img src="{% static 'lovers_abts/images/Output.png' %}" alt="Trulli" width="500" height="400"> </CENTER>
+</div>
+
+<p>The App will also output land area with the percentages of land area that need to have trees by forest type.</p>
+
+{% endblock %}
+
+{% block app_actions %}
+{% endblock %}
+
+{% block content_dependent_styles %}
+  {{ block.super }}
+  <link href="{% static 'lovers_abts/css/main.css' %}" rel="stylesheet"/>
+{% endblock %}
+
+{% block scripts %}
+  {{ block.super }}
+  <script src="{% static 'lovers_abts/js/main.js' %}" type="text/javascript"></script>
+{% endblock %}

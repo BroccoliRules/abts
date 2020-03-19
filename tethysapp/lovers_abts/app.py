@@ -40,10 +40,28 @@ class LoversAbts(TethysAppBase):
                 url='lovers-abts/proposal',
                 controller='lovers_abts.controllers.proposal'
             ),
+<<<<<<< HEAD
             UrlMap(
                 name='Directory',
                 url='lovers-abts/Directory',
                 controller='lovers_abts.controllers.Directory'
+            ),
+            UrlMap(
+                name='Information',
+                url='lovers-abts/Information',
+                controller='lovers_abts.controllers.Information'
+=======
+            
+            UrlMap(
+                name='mockup',
+                url='lovers-abts/mockup',
+                controller='lovers_abts.controllers.mockup'
+            ),
+            UrlMap(
+                name='geoprocessing',
+                url='lovers-abts/geoprocessing',
+                controller='lovers_abts.controllers.geoprocessing'
+>>>>>>> 0227b1bb0c51af2e2dae6780d1c08f4c5f0bde62
             ),
         )
 

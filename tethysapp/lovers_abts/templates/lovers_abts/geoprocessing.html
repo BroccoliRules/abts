@@ -16,31 +16,45 @@
 
 {% url 'lovers_abts:home' as home_url %}
 {% url 'lovers_abts:background' as background_url %}
-{% url 'lovers_abts:proposal' as proposal_url %}
-<<<<<<< HEAD
-{% url 'lovers_abts:Directory' as Directory_url %}
-{% url 'lovers_abts:Information' as Information_url %}
-<li class="{% if request.path == home_url %}active{% endif %}"><a href="{{ home_url }}">Home Page</a></li>
-<li class="{% if request.path == background_url %}active{% endif %}"><a href="{{ background_url }}">Background Page</a></li>
-<li class="{% if request.path == proposal_url %}active{% endif %}"><a href="{{ proposal_url }}">Proposal Page</a></li>
-<li class="{% if request.path == Directory_url %}active{% endif %}"><a href="{{ Directory_url }}">Directory Page</a></li>
-<li class="{% if request.path == Information_url %}active{% endif %}"><a href="{{ Information_url }}">Information Page</a></li>
-=======
 {% url 'lovers_abts:geoprocessing' as geoprocessing_url %}
+{% url 'lovers_abts:proposal' as proposal_url %}
 {% url 'lovers_abts:mockup' as mockup_url %}
 
 <li class="{% if request.path == home_url %}active{% endif %}"><a href="{{ home_url }}">Home Page</a></li>
 <li class="{% if request.path == background_url %}active{% endif %}"><a href="{{ background_url }}">Background Page</a></li>
-<li class="{% if request.path == proposal_url %}active{% endif %}"><a href="{{ proposal_url }}">Proposal Page</a></li>
 <li class="{% if request.path == geoprocessing_url %}active{% endif %}"><a href="{{ geoprocessing_url }}">Geoprocessing Page</a></li>
+<li class="{% if request.path == proposal_url %}active{% endif %}"><a href="{{ proposal_url }}">Proposal Page</a></li>
 <li class="{% if request.path == mockup_url %}active{% endif %}"><a href="{{ mockup_url }}">Mockup Page</a></li>
->>>>>>> 0227b1bb0c51af2e2dae6780d1c08f4c5f0bde62
+
+<head>
+ <link rel="stylesheet" href="background.css">
+ </head>
 
 {% endblock %}
 
 
-
 {% block app_content %}
+
+  <CENTER><H1>IDENTIFYING ZONES FOR FOREST USE</H1></CENTER>
+
+<h3>Geoprocessing Functions Needed </h3>
+
+<p> - One of the more important items of this Landslipe app is the geoprocessing functions used in ArcGIS Pro that allow the app to function and solve problems. </br>
+Our team has used several functions including: Slope, Reclassify, Multi-ring Buffer, and intersect. </br>
+The slope and reclassify will be used with the DEM data of Columbia to highlight the dangerous slope areas. </br>
+The Multi-ring Buffer will be used to show areas prone to landslides around rivers and bodies of water.</br>
+The final outputs of the previous items will be intersected with protected areas to produce the final output of all areas that should have trees planted to resduce landslides. </p>
+
+<div id = "image-content">
+
+     <CENTER> <img src="{% static 'lovers_abts/images/geo_model.png' %}" alt="Trulli" width="500" height="400"> </CENTER>
+</div>
+
+
+</div>
+
+
+
 {% endblock %}
 
 {% block app_actions %}
@@ -48,7 +62,7 @@
 
 {% block content_dependent_styles %}
   {{ block.super }}
-  <link href="{% static 'lovers_abts/css/main.css' %}" rel="stylesheet"/>
+  <link href="{% static 'lovers_abts/css/background.css' %}" rel="stylesheet"/>
 {% endblock %}
 
 {% block scripts %}

@@ -18,12 +18,13 @@
 {% url 'lovers_abts:background' as background_url %}
 {% url 'lovers_abts:proposal' as proposal_url %}
 {% url 'lovers_abts:Directory' as Directory_url %}
+{% url 'lovers_abts:Information' as Information_url %}
 
 <li class="{% if request.path == home_url %}active{% endif %}"><a href="{{ home_url }}">Home Page</a></li>
 <li class="{% if request.path == background_url %}active{% endif %}"><a href="{{ background_url }}">Background Page</a></li>
 <li class="{% if request.path == proposal_url %}active{% endif %}"><a href="{{ proposal_url }}">Proposal Page</a></li>
 <li class="{% if request.path == Directory_url %}active{% endif %}"><a href="{{ Directory_url }}">Directory Page</a></li>
-
+<li class="{% if request.path == Information_url %}active{% endif %}"><a href="{{ Information_url }}">Information Page</a></li>
 
 {% endblock %}
 

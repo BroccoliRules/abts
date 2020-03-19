@@ -19,6 +19,7 @@
 {% url 'lovers_abts:proposal' as proposal_url %}
 {% url 'lovers_abts:Directory' as Directory_url %}
 {% url 'lovers_abts:Information' as Information_url %}
+
 <li class="{% if request.path == home_url %}active{% endif %}"><a href="{{ home_url }}">Home Page</a></li>
 <li class="{% if request.path == background_url %}active{% endif %}"><a href="{{ background_url }}">Background Page</a></li>
 <li class="{% if request.path == proposal_url %}active{% endif %}"><a href="{{ proposal_url }}">Proposal Page</a></li>
@@ -28,37 +29,30 @@
 
 {% endblock %}
 
+
 {% block app_content %}
- <CENTER><h1> IDENTIFYING ZONES FOR FOREST USE</h1> </CENTER>
 
-<h3>Background</h3>
+  <CENTER><h1>DATA DESCRIPTION</h1></CENTER>
+  <p>We will to use DEM, Colombia's rivers and Colombia's National Parks </p>
 
-<p> - In 2017, there was a natural disaster in the city of Mocoa, in the department of Putumayo (Colombia),
-    one of the reasons for this tragedy was that during the day a locally intense precipitation in the high and eroded zones generated a and a
-    landslide that triggered an unexpected flooding killing at least 254 people, injuring 332, and leaving 70 others missing (Podlaha et., al, 2017).
-    Likewise, there are other vulnerable areas in the country that could suffer this kind of hazards. That is one of the purposes of our APP, generated susceptible
-    zones to reforest based on the slope to avoid eroded zones.    </p>
+  <p>We will to use a Colombia's DEM with a resolution 1km by 1km, it is from
+    <a href="https://www.usgs.gov/">Here</a></p>
+    <div id = "image-content">
+      <CENTER> <img src="{% static 'lovers_abts/images/DEM.jpg' %}" alt="DEM" width="15%"> </CENTER>
+    </div>
+  <h7> Image showing the DEM to use </h7>
 
-<div id = "image-content">
+  <p>We will to use a Colombia's rivers and National Parks, it is from IGAC
+    <a href="https://geoportal.igac.gov.co/contenido/datos-abiertos-cartografia-y-geografia">Here</a></p>
+    <div id = "image-content">
+      <CENTER> <img src="{% static 'lovers_abts/images/Rivers.jpg' %}" alt="DEM" width="15%"> </CENTER>
+    </div>
+  <h7> Image showing the rivers and Nationals Parks in Colombia to consider </h7>
 
-      <CENTER><img src="{% static 'lovers_abts/images/mocoa.jpeg' %}" alt="Trulli" width="500" height="400"> </CENTER>
+
+
+
 </div>
-
-
-</div>
-<p> -  Other interesting purpose to develop this app
-    is to identify the natural zones to avoid build constructions.
-    The district order to lay down a luxurious illegal house in the Eastern Hills of Bogota" (SEMANA Magazine)
-    It is a house of almost 7,000 square meters that was within a forest reserve area.
-    The CAR (Acronym name for regional autonomous corporation) fined the owners with 476 million pesos (150.000 dollars).
-    This APP allows to know where are the prohibited places to build.</p>
-
-<div id = "image-content">
-
-       <CENTER><img src="{% static 'lovers_abts/images/rosales.jpg' %}" alt="Trulli" width="500" height="400"> </CENTER>
-</div>
-
-
 
 
 

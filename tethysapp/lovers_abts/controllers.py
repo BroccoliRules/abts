@@ -13,6 +13,30 @@ def Directory(request):
     return render(request, 'lovers_abts/Directory.html', context)
 
 @login_required()
+def Information(request):
+    """
+    Controller for the Information page.
+    """
+    context = {}
+    return render(request, 'lovers_abts/Information.html', context)
+
+@login_required()
+def mockup(request):
+    """
+    Controller for the page.
+    """
+    context = {}
+    return render(request, 'lovers_abts/mockup.html', context)
+
+@login_required()
+def geoprocessing(request):
+    """
+    Controller for the page.
+    """
+    context = {}
+    return render(request, 'lovers_abts/geoprocessing.html', context)
+
+@login_required()
 def background(request):
     """
     Controller for the page.
