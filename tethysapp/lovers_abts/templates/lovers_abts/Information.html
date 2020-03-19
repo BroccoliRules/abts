@@ -19,13 +19,15 @@
 {% url 'lovers_abts:proposal' as proposal_url %}
 {% url 'lovers_abts:Directory' as Directory_url %}
 {% url 'lovers_abts:Information' as Information_url %}
-
+{% url 'lovers_abts:geoprocessing' as geoprocessing_url %}
+{% url 'lovers_abts:mockup' as mockup_url %}
 <li class="{% if request.path == home_url %}active{% endif %}"><a href="{{ home_url }}">Home Page</a></li>
 <li class="{% if request.path == background_url %}active{% endif %}"><a href="{{ background_url }}">Background Page</a></li>
 <li class="{% if request.path == proposal_url %}active{% endif %}"><a href="{{ proposal_url }}">Proposal Page</a></li>
 <li class="{% if request.path == Directory_url %}active{% endif %}"><a href="{{ Directory_url }}">Directory Page</a></li>
 <li class="{% if request.path == Information_url %}active{% endif %}"><a href="{{ Information_url }}">Information Page</a></li>
-
+<li class="{% if request.path == geoprocessing_url %}active{% endif %}"><a href="{{ geoprocessing_url }}">Geoprocessing Page</a></li>
+<li class="{% if request.path == mockup_url %}active{% endif %}"><a href="{{ mockup_url }}">Mockup Page</a></li>
 
 {% endblock %}
 
@@ -38,14 +40,14 @@
   <p>We will to use a Colombia's DEM with a resolution 1km by 1km, it is from
     <a href="https://www.usgs.gov/">Here</a></p>
     <div id = "image-content">
-      <CENTER> <img src="{% static 'lovers_abts/images/DEM.jpg' %}" alt="DEM" width="15%"> </CENTER>
+      <CENTER> <img src="{% static 'lovers_abts/images/DEM.jpg' %}" alt="DEM" width="60%"> </CENTER>
     </div>
   <h7> Image showing the DEM to use </h7>
 
   <p>We will to use a Colombia's rivers and National Parks, it is from IGAC
     <a href="https://geoportal.igac.gov.co/contenido/datos-abiertos-cartografia-y-geografia">Here</a></p>
     <div id = "image-content">
-      <CENTER> <img src="{% static 'lovers_abts/images/Rivers.jpg' %}" alt="DEM" width="15%"> </CENTER>
+      <CENTER> <img src="{% static 'lovers_abts/images/Rivers.jpg' %}" alt="DEM" width="60%"> </CENTER>
     </div>
   <h7> Image showing the rivers and Nationals Parks in Colombia to consider </h7>
 
